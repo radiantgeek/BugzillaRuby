@@ -1,0 +1,25 @@
+== Welcome to Bugzilla API for Ruby
+
+It's clone from Rubzilla, http://rubyforge.org/projects/rubzilla/
+
+I have made some refactoring,  and added functions from Bugzilla 3.4
+Sadly, removed Active Record-like finders...
+
+For comlete information about using Bugzilla API see documentation:
+   http://www.bugzilla.org/docs/3.6/en/html/api/Bugzilla/WebService/Bug.html
+   http://www.bugzilla.org/docs/3.6/en/html/api/Bugzilla/WebService/Product.html
+   http://www.bugzilla.org/docs/3.6/en/html/api/Bugzilla/WebService/User.html
+
+(c) 2010, Dmitry 'radiant' Volkov
+
+== Getting Started
+
+
+a = Example::Bug.search({"id" => 804})
+puts a
+
+== Description of Contents
+
+app
+  Holds all the code that's specific to this particular application.
+

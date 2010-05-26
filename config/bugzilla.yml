@@ -1,0 +1,16 @@
+# Configuration for bugzilla
+bugzilla:
+# Basic configuration
+  login: bot@bugzilla.com
+  password: bot
+  base_url: http://127.0.0.1/bugzilla/
+# Defaults (product configuration) [for creating new bugs]
+  :defaults:
+    #:product: TestProduct
+    #:component: TestComponent
+    #:version: unspecified
+    :rep_platform: All
+    :op_sys: All
+    # Default severity and priority
+#    :bug_severity: normal
+#    :priority: P3
