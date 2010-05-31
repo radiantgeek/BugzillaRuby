@@ -2,8 +2,8 @@
 
 It's clone from Rubzilla, http://rubyforge.org/projects/rubzilla/
 
-I have made some refactoring,  and added functions from Bugzilla 3.4
-Sadly, removed Active Record-like finders...
+I have made some refactoring, fixed some bugs and added new functions from Bugzilla API 3.4
+Sadly, removed "Active Record"-like finders...
 
 For comlete information about using Bugzilla API see documentation:
    http://www.bugzilla.org/docs/3.6/en/html/api/Bugzilla/WebService/Bug.html
@@ -14,12 +14,18 @@ For comlete information about using Bugzilla API see documentation:
 
 == Getting Started
 
+1. Set valid connection settings at config/bugzilla.yml
+2. Read comments at bugzilla.rb :)
 
-a = Example::Bug.search({"id" => 804})
-puts a
+== Example:
 
-== Description of Contents
+newBugs = Bugzilla::Bugzilla.instance.search({"status" => "NEW"})
+freeUsers = Bugzilla::Bugzilla.instance.users({"match" => [".org"]}) 
 
-app
-  Holds all the code that's specific to this particular application.
+== NB! 
 
+Some bug's fields can't retrived by official API [version, milestone, estimate time, etc.]
+So it can be useful use 'internals' field from API. 
+But remember it's bad practice.
+
+See example.rb for more information.
